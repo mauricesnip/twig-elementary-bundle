@@ -68,12 +68,12 @@ variables to receive values from their child components, like so:
     class: html_classes(
         element_class|default,
         base_class|default,
-        classes|default,
         {
             ("#{base_class}--#{size|default}"): size|default,
             ("#{base_class}--#{theme|default}"): theme|default,
             'is-active': is_active|default,
         },
+        classes|default,
     ),
 }|merge(attributes|default({})) %}
 ```
@@ -118,10 +118,11 @@ attributes, since the Twig `merge` function does not perform a deep merge.
 Will render:
 
 ```html
-<div class="is-active"></div>
+<article class="is-active"></article>
 ```
 
-Hence `classes|default`, for adding classes to the final output:
+Hence `classes|default` in `common/molecules/cards/card.html.twig`, for
+appending classes to the final output:
 
 ```twig
 {% include 'common/molecules/cards/card.html.twig' with {
@@ -137,7 +138,7 @@ Hence `classes|default`, for adding classes to the final output:
 Will render:
 
 ```html
-<div class="block__card card is-featured w-100 card--primary"></div>
+<article class="block__card card card--primary is-featured w-100"></article>
 ```
 
 ## Adding content
@@ -195,13 +196,13 @@ types) to extend from. Taking our advanced usage example one step further:
     class: html_classes(
         element_class|default,
         base_class|default,
-        classes|default,
         {
             ("#{base_class}--#{size|default}"): size|default,
             ("#{base_class}--#{theme|default}"): theme|default,
             ("#{base_class}--#{type|default}"): type|default,
             'is-active': is_active|default,
         },
+        classes|default,
     ),
 }|merge(attributes|default({})) %}
 
