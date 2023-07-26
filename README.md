@@ -4,6 +4,8 @@ Build Twig components in the most elemental way, without a large footprint.
 
 ## Heads up!
 
+**This bundle is in early development stage and should not be used in production.**
+
 The examples below require Twig's
 [`HtmlExtension`](https://github.com/twigphp/html-extra) to be installed. See
 the documentation for
