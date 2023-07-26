@@ -9,13 +9,13 @@
     class: html_classes(
         element_class|default,
         base_class|default,
-        classes|default,
         {
             ("#{base_class}--#{size|default}"): size|default,
             ("#{base_class}--#{theme|default}"): theme|default,
             ("#{base_class}--#{type|default}"): type|default,
             'is-active': is_active|default,
         },
+        classes|default,
     ),
 }|merge(attributes|default({})) %}
 
