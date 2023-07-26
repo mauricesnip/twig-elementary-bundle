@@ -17,7 +17,7 @@ on how to install this extension.
 ```twig
 {# common/molecules/cards/card.html.twig #}
 
-{% extends 'core/element-entry.html.twig' %}
+{% extends '@TwigElementary/core/element-entry.html.twig' %}
 
 {# Config #}
 {% set tag_name = 'article' %}
@@ -59,7 +59,7 @@ variables to receive values from their child components, like so:
 ```twig
 {# common/molecules/cards/card.html.twig #}
 
-{% extends 'core/element-entry.html.twig' %}
+{% extends '@TwigElementary/core/element-entry.html.twig' %}
 
 {# Config #}
 {% set tag_name = tag_name|default('article') %}
@@ -187,7 +187,7 @@ types) to extend from. Taking our advanced usage example one step further:
 ```twig
 {# skeletons/cards/card.html.twig #}
 
-{% extends 'elementary/core/element-entry.html.twig' %}
+{% extends '@TwigElementary/core/element-entry.html.twig' %}
 
 {# Config #}
 {% set tag_name = tag_name|default('article') %}
