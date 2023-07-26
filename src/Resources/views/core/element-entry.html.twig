@@ -1,0 +1,29 @@
+{#
+    Base element
+    - Automatically switches between element and void element based on tag name
+#}
+
+{# TODO: make void elements configurable in bundle #}
+{% set void_elements = [
+    'area',
+    'base',
+    'br',
+    'col',
+    'embed',
+    'hr',
+    'img',
+    'input',
+    'link',
+    'meta',
+    'param',
+    'source',
+    'track',
+    'wbr',
+] %}
+
+{# Extend element or void element based on tag name #}
+{%
+    extends tag_name|default in void_elements ?
+        '@TwigElementary/core/element-void.html.twig' :
+        '@TwigElementary/core/element.html.twig'
+%}

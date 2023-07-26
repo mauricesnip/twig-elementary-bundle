@@ -1,0 +1,12 @@
+{# Markup helpers #}
+
+{#
+    Render element attributes by hash
+
+    @param {object} hash - The attributes to render
+#}
+{% macro attributes_to_string(hash) %}
+    {%- autoescape false %}
+        {%- for key, value in hash %} {{ key|trim }}{{ value ? '="' ~ value|trim ~ '"' }}{% endfor %}
+    {%- endautoescape %}
+{% endmacro %}

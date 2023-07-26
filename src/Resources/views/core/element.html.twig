@@ -1,0 +1,21 @@
+{#
+    Element
+    - https://html.spec.whatwg.org/#normal-elements
+    - https://developer.mozilla.org/en-US/docs/Glossary/Element
+#}
+
+{% import '@TwigElementary/macros/markup.html.twig' as markup %}
+
+{# Defaults #}
+{% set tag_name = tag_name|default('span') %}
+
+{# Render #}
+{% block element %}
+    {% block start_tag %}
+        <{{ tag_name }}{{ markup.attributes_to_string(attributes|default({})) }}>
+    {% endblock %}
+        {% block contents is_raw_contents|default ? contents|default|raw : contents|default %}
+    {% block end_tag %}
+        </{{ tag_name }}>
+    {% endblock %}
+{% endblock %}

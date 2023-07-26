@@ -1,0 +1,59 @@
+{% extends 'elementary/core/element-entry.html.twig' %}
+
+{# Config #}
+{% set tag_name = tag_name|default('article') %}
+{% set base_class = base_class|default('card') %}
+
+{# Attributes #}
+{% set attributes = {
+    class: html_classes(
+        element_class|default,
+        base_class|default,
+        classes|default,
+        {
+            ("#{base_class}--#{size|default}"): size|default,
+            ("#{base_class}--#{theme|default}"): theme|default,
+            ("#{base_class}--#{type|default}"): type|default,
+            'is-active': is_active|default,
+        },
+    ),
+}|merge(attributes|default({})) %}
+
+{# Element classes #}
+{% set body_class = html_classes(
+    "#{base_class}__body",
+    body_classes|default,
+) %}
+
+{% set title_class = html_classes(
+    "#{base_class}__title",
+    title_classes|default,
+) %}
+
+{% set text_class = html_classes(
+    "#{base_class}__text",
+    text_classes|default,
+) %}
+
+{# Contents #}
+{% block contents %}
+    {% block header %}{% endblock %}
+    {% block image %}{% endblock %}
+    {% block body %}
+        <div class="{{ body_class|trim }}">
+            {% block body_inner %}
+                {% block title %}
+                    {% if title|default %}
+                        <h2 class="{{ title_class|trim }}">{{ title }}</h2>
+                    {% endif %}
+                {% endblock %}
+                {% block text %}
+                    {% if text|default %}
+                        <p class="{{ text_class|trim }}">{{ title }}</p>
+                    {% endif %}
+                {% endblock %}
+            {% endblock %}
+        </div>
+    {% endblock %}
+    {% block footer %}{% endblock %}
+{% endblock %}

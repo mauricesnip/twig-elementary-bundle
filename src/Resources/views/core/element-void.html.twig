@@ -1,0 +1,12 @@
+{#
+    Void element
+    - https://html.spec.whatwg.org/#void-elements
+    - https://developer.mozilla.org/en-US/docs/Glossary/Void_element
+#}
+
+{% extends '@TwigElementary/core/element.html.twig' %}
+
+{# Start tag only #}
+{% block element %}
+    {{ block('start_tag') }}
+{% endblock %}

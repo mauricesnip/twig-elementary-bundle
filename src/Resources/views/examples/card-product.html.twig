@@ -1,0 +1,20 @@
+{% extends 'skeletons/cards/card.html.twig' %}
+
+{# Config #}
+{% set type = 'product' %}
+
+{# Element classes #}
+{% set sku_class = html_classes(
+    "#{base_class}__sku",
+    sku_classes|default,
+) %}
+
+{# Contents #}
+{% block body_inner %}
+    {% block sku %}
+        {% if sku|default %}
+            <p class="{{ sku_class|trim }}">{{ sku }}</p>
+        {% endif %}
+    {% endblock %}
+    {{ parent() }}
+{% endblock %}
