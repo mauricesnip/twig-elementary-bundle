@@ -14,6 +14,13 @@ on how to install this extension.
 
 ## Basic usage
 
+Start by extending from
+[`element-entry.html.twig`](./src/Resources/views/core/element-entry.html.twig),
+which provides switching between
+[normal](./src/Resources/views/core/element.html.twig) and
+[void elements](./src/Resources/views/core/element-void.html.twig)
+automatically.
+
 ```twig
 {# common/molecules/cards/card.html.twig #}
 
