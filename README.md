@@ -265,13 +265,16 @@ And a product card extending from the above skeleton:
 {# Config #}
 {% set type = 'product' %}
 
-{# Element classes #}
-{% set sku_class = html_classes(
-    "#{base_class}__sku",
-    sku_classes|default,
-) %}
+{# Super #}
+{% block contents %}
+    {% set sku_class = html_classes(
+        "#{base_class}__sku",
+        sku_classes|default,
+    ) %}
+    {{ parent() }}
+{% endblock %}
 
-{# Contents #}
+{# Body inner #}
 {% block body_inner %}
     {% block sku %}
         {% if sku|default %}
@@ -282,8 +285,9 @@ And a product card extending from the above skeleton:
 {% endblock %}
 ```
 
-This inherits all the way up to `element.html.twig`, adding features along the
-way. With that in mind, the following `include`:
+This inherits all the way up to
+[`element.html.twig`](./src/Resources/views/core/element.html.twig), adding
+features along the way. With that in mind, the following `include`:
 
 ```twig
 {% set some_size_variable = 'lg' %}

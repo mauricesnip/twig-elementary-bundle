@@ -3,13 +3,16 @@
 {# Config #}
 {% set type = 'product' %}
 
-{# Element classes #}
-{% set sku_class = html_classes(
-    "#{base_class}__sku",
-    sku_classes|default,
-) %}
+{# Super #}
+{% block contents %}
+    {% set sku_class = html_classes(
+        "#{base_class}__sku",
+        sku_classes|default,
+    ) %}
+    {{ parent() }}
+{% endblock %}
 
-{# Contents #}
+{# Body inner #}
 {% block body_inner %}
     {% block sku %}
         {% if sku|default %}
