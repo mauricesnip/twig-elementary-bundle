@@ -265,7 +265,7 @@ And a product card extending from the above skeleton:
 {# Config #}
 {% set type = 'product' %}
 
-{# Super #}
+{# Super (use parent variables here) #}
 {% block contents %}
     {% set sku_class = html_classes(
         "#{base_class}__sku",
