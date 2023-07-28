@@ -1,6 +1,6 @@
 {#
-    Base element
-    - Automatically switches between element and void element based on tag name
+    Entry element
+    - Automatically switches between normal and void element based on tag name
 #}
 
 {# TODO: make void elements configurable in bundle #}
@@ -21,7 +21,7 @@
     'wbr',
 ] %}
 
-{# Extend element or void element based on tag name #}
+{# Extend normal or void element based on tag name #}
 {%
     extends tag_name|default in void_elements ?
         '@TwigElementary/core/element-void.html.twig' :
