@@ -84,7 +84,8 @@ variables to receive values from their child components, like so:
         },
         classes|default,
     ),
-}|merge(attributes|default({})) %}
+    ...attributes|default({})
+} %}
 ```
 
 ### Variable overriding
@@ -114,7 +115,8 @@ Will render:
 ### `attributes` quirks
 
 Be aware that overriding `attributes.class` will yield unexpected `class`
-attributes, since the Twig `merge` function does not perform a deep merge.
+attributes, since the Twig spread operator (`...`) does not perform a deep
+merge.
 
 ```twig
 {% include 'common/molecules/cards/card.html.twig' with {
@@ -213,7 +215,8 @@ types) to extend from. Taking our advanced usage example one step further:
         },
         classes|default,
     ),
-}|merge(attributes|default({})) %}
+    ...attributes|default({})
+} %}
 
 {# Element classes #}
 {% set body_class = html_classes(

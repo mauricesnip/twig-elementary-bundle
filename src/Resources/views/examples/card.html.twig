@@ -17,7 +17,8 @@
         },
         classes|default,
     ),
-}|merge(attributes|default({})) %}
+    ...attributes|default({})
+} %}
 
 {# Element classes #}
 {% set body_class = html_classes(
