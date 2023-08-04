@@ -4,8 +4,6 @@
     </p>
 </div>
 
-<br>
-
 # Twig Elementary Bundle
 
 Build Twig components in the most elemental way, without a large footprint.
@@ -111,8 +109,7 @@ Renders a void element. Extends
 
 ### `element-entry.html.twig`
 
-See the documentation of normal and void element above for available blocks and
-parameters. Extends
+See the documentation for normal and void element above. Extends
 [`element.html.twig`](./src/Resources/views/core/element.html.twig) or
 [`element-void.html.twig`](./src/Resources/views/core/element-void.html.twig).
 
