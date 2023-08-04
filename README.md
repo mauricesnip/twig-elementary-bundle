@@ -144,7 +144,7 @@ variables to receive values from their child components. Continuing on the
         },
         classes|default,
     ),
-    ...attributes|default({})
+    ...attributes|default({}),
 } %}
 ```
 
@@ -278,7 +278,7 @@ step further:
         },
         classes|default,
     ),
-    ...attributes|default({})
+    ...attributes|default({}),
 } %}
 
 {# Element classes #}
