@@ -1,3 +1,11 @@
+<div>
+    <p align="center">
+        <img src="https://www.mauricesnip.nl/packages/twig-elementary-bundle/twig-elementary-bundle.svg" alt="Twig Elementary Bundle Logo">
+    </p>
+</div>
+
+<br>
+
 # Twig Elementary Bundle
 
 Build Twig components in the most elemental way, without a large footprint.
@@ -57,6 +65,56 @@ Will render:
 ```html
 <article class="card card--primary is-active"></article>
 ```
+
+## Templates
+
+### `element.html.twig`
+
+Renders a normal element.
+
+#### Blocks
+
+| Name        | Description                                        |
+|:------------|:---------------------------------------------------|
+| `element`   | Renders the full element.                          |
+| `start_tag` | Renders the start tag with all of it's attributes. |
+| `end_tag`   | Renders the end tag.                               |
+| `contents`  | Renders the element's contents.                    |
+
+#### Parameters
+
+| Name              | Type      | Default     | Description                                          |
+|:------------------|:----------|:------------|:-----------------------------------------------------|
+| `attributes`      | `Object`  | `{}`        | The HTML-attributes to render, eg.: `{ id: 'foo' }`. |
+| `contents`        | `Mixed`   | `undefined` | The contents of the element.                         |
+| `tag_name`        | `String`  | `span`      | The HTML element's tag name, eg.: `a`, `div` or `p`. |
+| `is_raw_contents` | `Boolean` | `undefined` | Whether to render raw contents or not.               |
+
+### `element-void.html.twig`
+
+Renders a void element. Extends
+[`element.html.twig`](./src/Resources/views/core/element.html.twig).
+
+#### Blocks
+
+| Name        | Description                                        |
+|:------------|:---------------------------------------------------|
+| `element`   | Renders the full element.                          |
+| `start_tag` | Renders the start tag with all of it's attributes. |
+
+#### Parameters
+
+| Name         | Type     | Default | Description                                          |
+|:-------------|:---------|:--------|:-----------------------------------------------------|
+| `attributes` | `Object` | `{}`    | The HTML-attributes to render, eg.: `{ id: 'foo' }`. |
+| `tag_name`   | `String` | `span`  | The HTML element's tag name, eg.: `a`, `div` or `p`. |
+
+### `element-entry.html.twig`
+
+See the documentation of normal and void element above for available blocks and
+parameters. Extends
+[`element.html.twig`](./src/Resources/views/core/element.html.twig) or
+[`element-void.html.twig`](./src/Resources/views/core/element-void.html.twig).
 
 ## Advanced usage
 
