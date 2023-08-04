@@ -120,7 +120,8 @@ based on the provided `tag_name`.
 ## Advanced usage
 
 If you want to extend from your newly created component, be sure to allow for
-variables to receive values from their child components, like so:
+variables to receive values from their child components. Continuing on the
+[basic usage](#basicusage) example:
 
 ```twig
 {# common/molecules/cards/card.html.twig #}
@@ -252,7 +253,8 @@ Or, what you probably want most of the time, override the contents `block`.
 ## Concrete example
 
 Skeletons provide a base for components that come in many different flavors (or
-types) to extend from. Taking our advanced usage example one step further:
+types) to extend from. Taking the [advanced usage](#advancedusage) example one
+step further:
 
 ```twig
 {# skeletons/cards/card.html.twig #}
