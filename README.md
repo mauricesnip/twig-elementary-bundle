@@ -84,9 +84,9 @@ Renders a normal element.
 | Name              | Type      | Default     | Description                                          |
 |:------------------|:----------|:------------|:-----------------------------------------------------|
 | `attributes`      | `Object`  | `{}`        | The HTML-attributes to render, eg.: `{ id: 'foo' }`. |
-| `contents`        | `Mixed`   | `undefined` | The contents of the element.                         |
+| `contents`        | `String`  | `undefined` | The contents of the element.                         |
 | `tag_name`        | `String`  | `span`      | The HTML element's tag name, eg.: `a`, `div` or `p`. |
-| `is_raw_contents` | `Boolean` | `undefined` | Whether to render raw contents or not.               |
+| `is_raw_contents` | `Boolean` | `undefined` | Whether to render raw `contents` or not.             |
 
 ### `element-void.html.twig`
 
@@ -109,9 +109,13 @@ Renders a void element. Extends
 
 ### `element-entry.html.twig`
 
-See the documentation for normal and void element above. Extends
+Renders a normal or void element automatically.
+
+For blocks and parameters, see the documentation for normal and void element
+above. Extends
 [`element.html.twig`](./src/Resources/views/core/element.html.twig) or
-[`element-void.html.twig`](./src/Resources/views/core/element-void.html.twig).
+[`element-void.html.twig`](./src/Resources/views/core/element-void.html.twig),
+based on the provided `tag_name`.
 
 ## Advanced usage
 
@@ -187,8 +191,8 @@ Will render:
 <article class="is-active"></article>
 ```
 
-Hence `classes|default` in `common/molecules/cards/card.html.twig`, for
-appending classes to the final output:
+Hence `classes|default` in the advanced usage example for
+appending classes to the final output. In this case, the following:
 
 ```twig
 {% include 'common/molecules/cards/card.html.twig' with {
@@ -209,7 +213,9 @@ Will render:
 
 ## Adding content
 
-You can provide `contents` as a variable.
+You can provide `contents` as a variable, which is mostly used for text
+content. Markup is supported by setting `is_raw_contents` to `true`. See
+[documentation for `element.html.twig`](#elementhtmltwig).
 
 ```twig
 {# common/molecules/cards/card.html.twig #}
@@ -217,7 +223,7 @@ You can provide `contents` as a variable.
 ...
 
 {# Contents #}
-{% set contents = 'I'm a card' %}
+{% set contents = 'Lorem ipsum' %}
 ```
 
 Or, what you probably want most of the time, override the contents `block`.
