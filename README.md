@@ -18,6 +18,14 @@ the documentation for
 [`html_classes`](https://twig.symfony.com/doc/3.x/functions/html_classes.html)
 on how to install this extension.
 
+## Installation
+
+Run the following command to install this package with [Composer](https://getcomposer.org/):
+
+```sh
+composer require mauricesnip/twig-elementary-bundle
+```
+
 ## Basic usage
 
 Start by extending from
