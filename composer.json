@@ -16,5 +16,6 @@
         {
             "name": "Maurice Snip"
         }
-    ]
+    ],
+    "minimum-stability": "dev"
 }
