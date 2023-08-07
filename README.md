@@ -8,6 +8,11 @@
 
 Build Twig components in the most elemental way, without a large footprint.
 
+<p>
+    <img src="https://img.shields.io/github/v/tag/mauricesnip/twig-elementary-bundle">
+    <img src="https://img.shields.io/github/license/mauricesnip/twig-elementary-bundle">
+</p>
+
 ## Heads up!
 
 **This bundle is in early development stage and should not be used in production.**
