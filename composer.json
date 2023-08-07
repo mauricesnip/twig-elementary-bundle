@@ -1,0 +1,20 @@
+{
+    "name": "mauricesnip/twig-elementary-bundle",
+    "description": "Build Twig components in the most elemental way, without a large footprint.",
+    "type": "symfony-bundle",
+    "require": {
+        "php": "^7.0 || ^8.0",
+        "twig/twig": "^2.0 || ^3.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mauricesnip\\TwigElementaryBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Maurice Snip"
+        }
+    ]
+}
