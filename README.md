@@ -30,7 +30,7 @@ automatically.
 ```twig
 {# common/molecules/cards/card.html.twig #}
 
-{% extends '@TwigElementary/core/element-entry.html.twig' %}
+{% extends '@MausTwigElementary/core/element-entry.html.twig' %}
 
 {# Config #}
 {% set tag_name = 'article' %}
@@ -126,7 +126,7 @@ variables to receive values from their child components. Continuing on the
 ```twig
 {# common/molecules/cards/card.html.twig #}
 
-{% extends '@TwigElementary/core/element-entry.html.twig' %}
+{% extends '@MausTwigElementary/core/element-entry.html.twig' %}
 
 {# Config #}
 {% set tag_name = tag_name|default('article') %}
@@ -259,7 +259,7 @@ step further:
 ```twig
 {# skeletons/cards/card.html.twig #}
 
-{% extends '@TwigElementary/core/element-entry.html.twig' %}
+{% extends '@MausTwigElementary/core/element-entry.html.twig' %}
 
 {# Config #}
 {% set tag_name = tag_name|default('article') %}
