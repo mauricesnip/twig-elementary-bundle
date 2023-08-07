@@ -9,7 +9,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Mauricesnip\\TwigElementaryBundle\\": "src/"
+            "Maus\\TwigElementaryBundle\\": "src/"
         }
     },
     "authors": [
