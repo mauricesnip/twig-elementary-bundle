@@ -174,9 +174,9 @@ Will render:
 
 ### `attributes` quirks
 
-Be aware that overriding `attributes.class` will yield unexpected `class`
-attributes, since the Twig spread operator (`...`) does not perform a deep
-merge.
+Be aware that overriding `attributes.class` will replace the entire `class`
+attribute, since Twig does not support deep merge. Nor does merge concatenate
+string values in any way. Thus, the following include:
 
 ```twig
 {% include 'common/molecules/cards/card.html.twig' with {
@@ -192,7 +192,7 @@ Will render:
 <article class="is-active"></article>
 ```
 
-Hence `classes|default` in the advanced usage example for
+Hence `classes|default` in the [advanced usage](#advanced-usage) example for
 appending classes to the final output. In this case, the following:
 
 ```twig
